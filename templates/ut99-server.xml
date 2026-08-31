@@ -1,0 +1,40 @@
+<Container version="2">
+    <Name>ut99-server</Name>
+    <Repository>ghcr.io/phasecorex/ut99-server:latest</Repository>
+    <Registry>https://ghcr.io/phasecorex/ut99-server</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Icon>https://raw.githubusercontent.com/PhasecoreX/unraid-community-apps/main/templates/icon/ut99-server.png</Icon>
+    <Overview>Unreal Tournament (1999) server</Overview>
+    <Project>https://github.com/PhasecoreX/docker-ut99-server</Project>
+    <TemplateURL>https://raw.githubusercontent.com/PhasecoreX/unraid-community-apps/main/templates/ut99-server.xml</TemplateURL>
+    <Category>GameServers:</Category>
+    <ExtraSearchTerms>unreal tournament 1999 99</ExtraSearchTerms>
+    <Requires>Server data will be downloaded to a subdirectory called "server". If you can help it, don't modify anything in there. You should instead put your addons in the "addons" direcotry, where all configuration files will automatically be moved to as well.</Requires>
+    <!-- Display Always, Optional -->
+    <Config Display="always" Required="false" Type="Variable" Name="Map Name" Target="MAP_NAME" Default="DM-Agony" Description="Initial map to be loaded." Mask="false"/>
+    <Config Display="always" Required="false" Type="Variable" Name="Game Type" Target="GAME_TYPE" Default="Botpack.DeathMatchPlus" Description="Initial game type to be loaded." Mask="false"/>
+    <Config Display="always" Required="false" Type="Variable" Name="Mutators" Target="MUTATORS" Default="" Description="Mutators you want to load, separated by comma (no spaces). For example: MapVoteLA13.BDBMapVote,WhoPushedMe.WhoPushedMe" Mask="false"/>
+    <!-- Display Advanced, Required -->
+    <Config Display="advanced" Required="true" Type="Path" Name="Server Data" Target="/data" Default="/mnt/cache/appdata/ut99-server" Mode="rw" Description="Server data and addons/configuration files will be stored here." Mask="false"/>
+    <Config Display="advanced" Required="true" Type="Port" Name="Game Port" Target="7777" Default="7777" Mode="udp" Description="Port used by clients connecting to the server. If this is changed, all of the ports below will need to be recalculated." Mask="false"/>
+    <!-- Display Advanced, Optional -->
+    <Config Display="advanced" Required="false" Type="Port" Name="Query Port 1" Target="7778" Default="7778" Mode="udp" Description="Port used by clients querying server info. (Game Port + 1)" Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Port" Name="Query Port 2" Target="7779" Default="7779" Mode="udp" Description="Port used by clients querying server info. (Game Port + 2)" Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Port" Name="GameSpy Query Port 1" Target="7780" Default="7780" Mode="udp" Description="Port used for querying more detailed server information. (Game Port + 3)" Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Port" Name="GameSpy Query Port 2" Target="7781" Default="7781" Mode="udp" Description="Port used for querying more detailed server information. (Game Port + 4)" Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Port" Name="LAN Query Port" Target="8777" Default="8777" Mode="udp" Description="Port used for queries by LAN clients. (Game Port + 1000)" Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="Server Start Extras" Target="SERVER_START_EXTRAS" Default="" Description="If you need to add any other parameters to the server launch command, put them in this variable. This must start with a question mark (?), as it will be appended to the end of the mutators list in the built server start command." Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="Server Start Command" Target="SERVER_START_COMMAND" Default="" Description="If you don't want to use the environment variables to specify map/gametype/mutators/extras, you can just specify the entire server start command here. All of the map/gametype/mutators/extras environment variables will be ignored." Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="Time Zone" Target="TZ" Default="" Description="" Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="PUID" Target="PUID" Default="99" Description="User ID to run the container as." Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="PGID" Target="PGID" Default="100" Description="Group ID to run the container as." Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="Skip Install" Target="SKIP_INSTALL" Default="" Description="If you don't want to download/update your server files, set this to true. I assume you know what you're doing. Maybe manually installing your own server to the /data/server directory or something? I don't know." Mask="false"/>
+    <DefaultTagDescription>Default install</DefaultTagDescription>
+    <Branch>
+        <Tag>compressor</Tag>
+        <TagDescription>Also enable the server file compressor setting (for setting up a redirect download server)</TagDescription>
+        <Config Display="always" Required="true" Type="Variable" Name="Compress Directory" Target="COMPRESS_DIR" Default="/compressed" Description="Enable the compressor and compress to this path in the container." Mask="false"/>
+        <Config Display="always" Required="true" Type="Path" Name="Compressed Data" Target="/compressed" Default="/mnt/cache/appdata/ut99-server-compressed" Mode="rw" Description="Mount the compressed directory outside of the container." Mask="false"/>
+    </Branch>
+</Container>

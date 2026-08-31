@@ -1,0 +1,24 @@
+<CommunityApplications>
+    <!-- Required profile -->
+    <Profile>
+        By popular demand, I have created a repository for publishing container images to the Unraid Community Apps store. Enjoy!
+    </Profile>
+    <!-- Optional icon -->
+    <Icon>https://github.com/PhasecoreX.png</Icon>
+    <!-- Optional web page -->
+    <WebPage>https://github.com/PhasecoreX/unraid-community-apps</WebPage>
+    <!-- Optional support and donation links -->
+    <!--   <Forum>https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC</Forum> -->
+    <!-- Optional Discord link -->
+    <Discord>https://discord.gg/QzdPp2b</Discord>
+    <!-- Optional donation link -->
+    <DonateLink>https://buymeacoffee.com/phasecorex</DonateLink>
+    <!-- Optional donation text -->
+    <DonateText>Any amount of support is greatly appreciated!</DonateText>
+    <!-- Optional photos -->
+    <!--   <Photo>URL to any photos</Photo> -->
+    <!-- You can add multiple photos by adding multiple <Photo> tags -->
+    <!-- Optional videos -->
+    <!--   <Video>URL to any video.  Youtube URLs are recommended</Video> -->
+    <!-- You can add multiple videos by adding multiple <Video> tags -->
+</CommunityApplications>

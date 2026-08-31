@@ -29,11 +29,4 @@
     <Config Display="advanced" Required="false" Type="Variable" Name="PUID" Target="PUID" Default="99" Description="User ID to run the container as." Mask="false"/>
     <Config Display="advanced" Required="false" Type="Variable" Name="PGID" Target="PGID" Default="100" Description="Group ID to run the container as." Mask="false"/>
     <Config Display="advanced" Required="false" Type="Variable" Name="Skip Install" Target="SKIP_INSTALL" Default="" Description="If you don't want to download/update your server files, set this to true. I assume you know what you're doing. Maybe manually installing your own server to the /data/server directory or something? I don't know." Mask="false"/>
-    <DefaultTagDescription>Default install</DefaultTagDescription>
-    <Branch>
-        <Tag>compressor</Tag>
-        <TagDescription>Also enable the server file compressor setting (for setting up a redirect download server)</TagDescription>
-        <Config Display="always" Required="true" Type="Variable" Name="Compress Directory" Target="COMPRESS_DIR" Default="/compressed" Description="Enable the compressor and compress to this path in the container." Mask="false"/>
-        <Config Display="always" Required="true" Type="Path" Name="Compressed Data" Target="/compressed" Default="/mnt/cache/appdata/ut2004-server-compressed" Mode="rw" Description="Mount the compressed directory outside of the container." Mask="false"/>
-    </Branch>
 </Container>

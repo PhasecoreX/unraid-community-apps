@@ -1,0 +1,24 @@
+<Container version="2">
+    <Name>red-discordbot</Name>
+    <Repository>phasecorex/red-discordbot:full</Repository>
+    <Registry>https://hub.docker.com/r/phasecorex/red-discordbot</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Icon>https://raw.githubusercontent.com/PhasecoreX/unraid-community-apps/main/templates/icon/red-discordbot.png</Icon>
+    <Overview>The newest Red-Discordbot in a convenient multi-arch container.&#13;
+&#13;
+How to create a bot account: https://discordpy.readthedocs.io/en/v1.0.1/discord.html#creating-a-bot-account&#13;
+&#13;
+More variables for Red-DiscordBot can be found in the readme: https://github.com/PhasecoreX/docker-red-discordbot</Overview>
+    <Project>https://github.com/PhasecoreX/docker-red-discordbot</Project>
+    <TemplateURL>https://raw.githubusercontent.com/PhasecoreX/unraid-community-apps/main/templates/red-discordbot.xml</TemplateURL>
+    <Category>Tools:</Category>
+    <!-- Display Always, Required -->
+    <Config Display="always" Required="true" Type="Variable" Name="Token" Target="TOKEN" Default="" Description="The bot token you want Red-DiscordBot to use." Mask="true"/>
+    <Config Display="always" Required="true" Type="Variable" Name="Prefix" Target="PREFIX" Default="" Description="The prefix you want Red-DiscordBot to use for commands." Mask="false"/>
+    <!-- Display Advanced, Required -->
+    <Config Display="advanced" Required="true" Type="Path" Name="Data" Target="/data" Default="/mnt/user/appdata/red-discordbot" Mode="rw" Description="Red-DiscordBot data will be stored here." Mask="false"/>
+    <!-- Display Advanced, Optional -->
+    <Config Display="advanced" Required="false" Type="Variable" Name="PUID" Target="PUID" Default="99" Description="User ID to run the container as." Mask="false"/>
+    <Config Display="advanced" Required="false" Type="Variable" Name="PGID" Target="PGID" Default="100" Description="Group ID to run the container as." Mask="false"/>
+</Container>

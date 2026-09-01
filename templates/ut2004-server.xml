@@ -12,7 +12,7 @@
     <ExtraSearchTerms>unreal tournament 2004</ExtraSearchTerms>
     <Requires>Server data will be downloaded to a subdirectory called "server". If you can help it, don't modify anything in there. You should instead put your addons in the "addons" direcotry, and all configuration files will automatically be moved into the "config" directory.</Requires>
     <!-- Display Always, Required -->
-    <Config Display="always" Required="true" Type="Variable" Name="CD Key" Target="CD_KEY" Default="" Description="Your server CD key. This is needed for first run; afterwards you will see a cdkey file created in the /data/config directory, and can safely remove this environment variable." Mask="false"/>
+    <Config Display="always" Required="true" Type="Variable" Name="CD Key" Target="CD_KEY" Default="" Description="Your server CD key. This is needed for first run; afterwards you will see a cdkey file created in the /data/config directory, and can safely remove this environment variable." Mask="true"/>
     <!-- Display Always, Optional -->
     <Config Display="always" Required="false" Type="Variable" Name="Map Name" Target="MAP_NAME" Default="DM-Antalus" Description="Initial map to be loaded." Mask="false"/>
     <Config Display="always" Required="false" Type="Variable" Name="Game Type" Target="GAME_TYPE" Default="xGame.xDeathMatch" Description="Initial game type to be loaded." Mask="false"/>
